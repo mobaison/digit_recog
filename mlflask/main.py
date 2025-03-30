@@ -9,7 +9,7 @@ import io
 import os
 
 app = Flask(__name__)
-model = load_model("/Users/mobaisonoinam/Documents/scikit/mlflask/model2.h5")  # Ensure the correct model path
+model = load_model("model2.h5")  # Ensure the correct model path
 
 def preprocess_image(image):
     """Preprocess image for model prediction"""
