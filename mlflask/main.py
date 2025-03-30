@@ -9,7 +9,8 @@ import io
 import os
 
 app = Flask(__name__)
-model = load_model("model2.h5")  # Ensure the correct model path
+model_path = os.path.join(os.path.dirname(__file__), "model2.h5")
+model = load_model(model_path)
 
 def preprocess_image(image):
     """Preprocess image for model prediction"""
