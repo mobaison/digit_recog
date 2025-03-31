@@ -9,15 +9,7 @@ import os
 
 app = Flask(__name__)
 
-# Load the TFLite model
-model_path = os.path.join(os.path.dirname(__file__), "model2.tflite")
-interpreter = tf.lite.Interpreter(model_path=model_path)
-interpreter.allocate_tensors()
-
-# Get input & output details
-input_details = interpreter.get_input_details()
-output_details = interpreter.get_output_details()
-
+model = load_model("model2.h5") 
 def preprocess_image(image):
     """Preprocess image for model prediction"""
     img = cv2.resize(image, (28, 28))
